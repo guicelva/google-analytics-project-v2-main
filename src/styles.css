@@ -1,0 +1,191 @@
+/* ==========================================================
+   CORES DO SITE: Definidas uma vez aqui em cima e reaproveitadas lá embaixo.
+   Se quiser trocar uma cor do site inteiro, troca só aqui. Isso torna o projeto mais modular.
+   ========================================================== 
+*/
+
+:root {
+  --thistle: #dbc2cf;
+  --lavender-grey: #9fa2b2;
+  --cerulean: #3c7a89;
+  --charcoal-blue: #2e4756;
+  --jet-black: #16262e;
+
+  --fundo: #f7f2f4;       /* cor de fundo da página */
+  --texto: var(--jet-black);
+  --texto-suave: var(--charcoal-blue);
+  --destaque: var(--cerulean);
+  --borda: var(--lavender-grey);
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================
+   RESET BÁSICO: Remove espaçamentos padrão do navegador para termos
+   controle total do layout.
+   ========================================================== 
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--destaque);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================
+   CABEÇALHO
+   ========================================================== 
+*/
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.menu a {
+  margin-left: 1.5rem;
+  color: var(--texto-suave);
+}
+
+/* ==========================================================
+   APRESENTAÇÃO (HERO)
+   ========================================================== 
+*/
+
+.apresentacao {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.apresentacao h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.apresentacao p {
+  color: var(--texto-suave);
+  margin-bottom: 1.5rem;
+}
+
+.botao {
+  display: inline-block;
+  background-color: var(--destaque);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+}
+
+.botao:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+/* ==========================================================
+   SEÇÕES GERAIS: Todas as seções (Sobre, Stack, Projetos, Contato) usam
+   esta mesma estrutura de espaçamento e largura máxima.
+   ========================================================== 
+*/
+
+   .secao {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--borda);
+}
+
+.secao h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.secao h3 {
+  font-size: 1rem;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--texto-suave);
+}
+
+.secao p {
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================
+   TECH STACK (lista de tags)
+   ========================================================== 
+*/
+
+.lista-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lista-tags li {
+  background-color: var(--thistle);
+  color: var(--jet-black);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================
+   PROJETOS
+   ========================================================== 
+*/
+
+.projeto {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--borda);
+}
+
+.projeto:first-of-type {
+  border-top: none;
+}
+
+.projeto h3 {
+  color: var(--texto);
+  margin: 0 0 0.5rem;
+}
+
+.projeto p {
+  color: var(--texto-suave);
+}
+
+/* ==========================================================
+   RESPONSIVO: Em telas pequenas, o menu do cabeçalho quebra a linha.
+   ========================================================== 
+*/
+
+@media (max-width: 480px) {
+  .menu a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+}
